@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 모바일은 화면크기를 자동으로 줄여서 표현하는 방식. 1:1사이즈의 대응을 위하여 viewport코드를 추가한다 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Dongle:wght@300;400;700&family=Fredoka:wght@300;400;500;600&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Quicksand:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,900;1,800;1,900&family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+    <!-- 제이쿼리 설치 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+	$(document).ready(function(){
+        $('#profile_popup_close').click(function(){
+            $('#profile_popup').fadeOut(300)
+            
+        })
+        // 
+        $('#rm').click(function(){
+            $('#profile_popup').fadeIn(300)
+            $('#profile_popup_box').css({'top':$(this).offset().top})
+            $('#profile_popup_img').attr({'src':'member-rm.jpg'})
+            $('#profile_popup_textbox>h4').text('RM')
+            $('#profile_popup_textbox>p').text('생일: 1994년 9월 12일')
+        })
+        $('#jin').click(function(){
+            $('#profile_popup').fadeIn(300)
+            $('#profile_popup_box').css({'top':$(this).offset().top})
+            $('#profile_popup_img').attr({'src':'member-jin.jpg'})
+            $('#profile_popup_textbox>h4').text('진')
+            $('#profile_popup_textbox>p').text('생일: 1992년 12월 4일')
+        })
+        $('#suga').click(function(){
+            $('#profile_popup').fadeIn(300)
+            $('#profile_popup_box').css({'top':$(this).offset().top})
+            $('#profile_popup_img').attr({'src':'member-suga.jpg'})
+            $('#profile_popup_textbox>h4').text('슈가')
+            $('#profile_popup_textbox>p').text('생일: 1993년 3월 9일')
+        })
+        $('#jhope').click(function(){
+            $('#profile_popup').fadeIn(300)
+            $('#profile_popup_box').css({'top':$(this).offset().top})
+            $('#profile_popup_img').attr({'src':'member-jhope.jpg'})
+            $('#profile_popup_textbox>h4').text('제이홉')
+            $('#profile_popup_textbox>p').text('생일: 1994년 2월 18일')
+        })
+        $('#jimin').click(function(){
+            $('#profile_popup').fadeIn(300)
+            $('#profile_popup_box').css({'top':$(this).offset().top})
+            $('#profile_popup_img').attr({'src':'member-jimin.jpg'})
+            $('#profile_popup_textbox>h4').text('지민')
+            $('#profile_popup_textbox>p').text('생일: 1995년 10월 13일')
+        })
+        $('#v').click(function(){
+            $('#profile_popup').fadeIn(300)
+            $('#profile_popup_box').css({'top':$(this).offset().top - $(this). height()})
+            $('#profile_popup_img').attr({'src':'member-v.jpg'})
+            $('#profile_popup_textbox>h4').text('뷔')
+            $('#profile_popup_textbox>p').text('생일: 1995년 12월 30일')
+        })
+        $('#jk').click(function(){
+            $('#profile_popup').fadeIn(300)
+            $('#profile_popup_box').css({'top':$(this).offset().top - $(this). height()})
+            $('#profile_popup_img').attr({'src':'member-jk.jpg'})
+            $('#profile_popup_textbox>h4').text('정국')
+            $('#profile_popup_textbox>p').text('생일: 1997년 9월 1일')
+        })
+        
+
+        $('#menu_icon1').click(function(){
+            $('#menu_icon1').hide()
+            $('#menu_popup').show()
+            $('body').css({'overflow':'hidden'})
+        })
+        $('#menu_icon2').click(function(){
+            $('#menu_popup').hide()
+            $('#menu_icon1').show()
+            $('body').css({'overflow':'auto'})
+        })
+
+		$('#main_slide_bt>li').click(function(){
+            $(this).css({'opacity':'1'}).siblings().css({'opacity':'0.5'})
+            $('#main_slide').animate({'left': $(this).index()* - 100 + '%'  })
+        })
+	});
+  </script>
+  <style>
+      * { margin: 0; padding: 0; list-style: none;  font-family: 'Teko', sans-serif; font-weight: 400;}
+      a { text-decoration: none; color: inherit;}
+      body,html { width: 100%; height: auto;}
+      body { position: relative;}
+      header { width: 100%; height: 65px; background-color: rgba(0,0,0,0.3); position: fixed; left: 0; top: 0; z-index: 99999;}
+      #menu_icon1 { float: left; height: 100%; margin-left: 20px; cursor: pointer;}
+      #logo { position: absolute;left: 0;right: 0;top: 0;bottom: 0; margin: auto; width: 52px; }
+      #lang { float: right; line-height: 65px; color: #fff; margin-right: 20px; font-size: 14px; position: relative; cursor: pointer;}
+      #lang:hover>.lang_sub { display: block;}
+      .lang_sub { width: 85px; height: 268px; position: absolute; left: -30px; top: 57px; text-align: center; padding-top: 8px; background: url(lang_arrow.png) center top no-repeat; display: none;}
+      .lang_sub>li { width: 100%; height: 65px; line-height: 65px; border-bottom: 1px solid #ccc; color: #555; background-color: #fff;}
+      .lang_sub>li:nth-child(1) { background-color: #000; color: #fff;}
+      .lang_sub>li:hover { background-color: #000; color: #fff;}
+      footer { width: 100%; height: 62px; background-color: #272727; position: fixed; left: 0; bottom: 0;}
+      #footer_icon { overflow: hidden; margin-left: 20px;float: left;}
+      #footer_icon>li { float: left; width: 22px; height: 22px; border-radius: 100px; margin-right: 2px; background-color: #111; margin-top: 20px; margin-right: 5px; cursor: pointer;}
+      #footer_icon>li>img { width: 100%; opacity: 0.5;}
+      #footer_icon>li:hover>img { opacity: 1;}
+      #footer_selet_menu { width: 290px; height: 40px; position: absolute; border-bottom: 1px solid #999; line-height: 40px; text-align: center; font-size: 14px; color: #929191; left: 0; right: 0; top: 0; margin: auto; font-weight: 800; background: url(footer_arrow1.png) 260px center no-repeat; padding-top: 10px;} 
+      #footer_selet_menu:hover {background: url(footer_arrow2.png) 260px center no-repeat; }
+      #footer_selet_menu:hover>.footer_selet_menu_sub {display: block;}
+      .footer_selet_menu_sub { width: 100%; position: absolute; bottom: 50px; left: 0; display: none;}
+      .footer_selet_menu_sub>li {width: 100%; padding: 3px 0; color: #929191; background-color: #1e1e1e; text-align: center; border-bottom: 1px solid #555; font-size: 12px; cursor: pointer;}
+      .footer_selet_menu_sub>li:hover { color: #fff; background-color: #000;}
+      .footer_selet_menu_sub>li:last-child { border: none;}
+      #footer_right { color: #999; float: right;text-align: right; margin-top: 11px;}
+      #footer_right>h6 {font-size: 10px; font-weight: 400; line-height: 20px;}
+      #footer_right>p { font-size: 10px;line-height: 20px;}
+      #menu_popup { width: 100%; height: 100%; position: fixed; left: 0; top: 0;  color: #fff; z-index: 999999; display: none;}
+      #menu_icon2 { margin-left: 20px; width: 65px; cursor: pointer; position: absolute; left: 0; top: 0;}
+      #menu_popup_leftbg {width: 50%; height: 100%; float: left; background-color: rgba(0,0,0,0.6); position: relative;}
+      #menu_popup_leftbg>ul { width: 370px; height: 460px; position: absolute; right: 0; top: 0; bottom: 0; margin: auto;}
+      #menu_popup_leftbg>ul>li { width: 100%; height: 92px; line-height: 91px; text-align: center; color: #fff; border-bottom: 1px solid #fff; box-sizing: border-box; opacity: 0.7;}
+      #menu_popup_leftbg>ul>li:nth-child(3) { opacity: 1; border-bottom: 2px solid #fff;}
+      #menu_popup_rightbg {width: 50%; height: 100%; float: right; background-color: rgba(0,0,0,0.8);position: relative; }
+      #menu_popup_rightbg>ul { width: 90%; height: 460px; position: absolute; left: 15%; top: 0; bottom: 0; margin: auto;}
+      #menu_popup_rightbg>ul>li { line-height: 6vh;}
+      #menu_popup_rightbg>ul>li:nth-child(1) { margin-top: 100px;}
+      /* profile 시작 */
+      #profile { width: 100%; background-color: #ffdc00; overflow: hidden;}
+      #about_bts { width: 1024px; margin: auto; margin-top: 65px; overflow: hidden;}
+      #about_bts>h2 {text-align: right; width: 30%; float: left; margin-right: 5%; font-size: 80px; color: #fff; margin-top: 10px; text-shadow: 0 0 5px rgba(0,0,0,0.3); position: relative; font-weight: 400;}
+      #about_bts>p {width: 60%; float: right;margin-top: 25px; margin-right: 5%;}
+      #about_bts_img { width: 100%;}
+      #profile_img_bg { width: 100%; background-color: rgba(0,0,0,0.2);margin-top: 100px; margin-bottom: 200px;} 
+      #profile_img {width: 100%; max-width: 1300px; overflow: hidden; margin: auto;}
+      #profile_img>li {width: 25%; float: left; position: relative;}
+      #profile_img>li>img { width: 100%; vertical-align: top;}
+      #profile_img>li>h3 {width: 100%; text-align: center; line-height: 25vw; color: #fff; font-size: 3vw; position: absolute; left: 0; top: 0; font-weight: 400;}
+      .profile_img { cursor: pointer;}
+      #profile_popup { width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-color: rgba(0,0,0,0.5); display: none;}
+      #profile_popup_box { width: 1200px; position: absolute; top: 1500px; left: 0; right: 0; margin: auto; }
+      #profile_popup_img { width: 50%; float: left;  vertical-align: top;}
+      #profile_popup_textbox { width: 50%; float: right; background-color: rgba(46, 45, 45, 0.863); position: relative;}
+      #profile_popup_textbox>img { width: 100%; vertical-align: top;}
+      #profile_popup_textbox>h4 { color: #fff; font-size: 40px; margin-top: 40%; margin-left: 5%; position: absolute;left: 20px; top: 0;}
+      #profile_popup_textbox>p { color: #fff; font-size: 23px; margin-top: 45%; margin-left: 5%;position: absolute;left: 20px; top: 20px; }
+      #profile_popup_close { position: absolute; right: 0; top: 0; cursor: pointer;}
+  </style>
+  <style>
+    /*미디어쿼리*/
+	@media all and (min-width:320px) { /* 320~767 모바일 */
+        header { height: 90px;}
+        #logo { width: 60px;}
+        #lang { font-size: 20px; line-height: 90px;}
+        .lang_sub {top: 82px;  left: -20px;}
+       
+      footer { position: relative; height: auto;}
+      body {height: auto;}
+      #footer_icon {float: none; text-align: center;}
+      #footer_icon>li { width: 8vw; height: 8vw; margin-right: 2%; float: none; display: inline-block;}
+      #footer_selet_menu { position: relative;}
+      #footer_right { float: none; text-align: center;}
+      #footer_right>p { width: 100%; float: none;}
+      
+      #menu_icon2 { margin-left: 4.5%; width: 18%;}
+      #menu_popup_leftbg>ul { width: 100%;}
+      #about_bts { width: 94%;}
+      #about_bts>h2 { font-size: 12vw; width: 100%; text-align-last: left; margin-top: -40px;}
+      #about_bts>p { width: 100%; margin-right: 0%;}
+      #profile_img>li {width: 50%;}
+      .profile_mobile_hide { display: none;}
+      .profile_mobile_show { display: block;}
+      #profile_img>li>h3 {line-height: 50vw; font-size: 8vw;}
+      #profile_popup_box { width: 100%; padding-top: 0;}
+      #profile_popup_img {width: 100%; }
+      #profile_popup_textbox { width: 100%; text-align: center;}
+      #profile_popup_textbox>img { width: 100%;height: 50vw;}
+      #profile_popup_textbox>h4{width: 100%;left: -20px; top: -20px; margin-top: 20%;}
+      #profile_popup_textbox>p { width: 100%;left: -20px; top: 0px; margin-top: 25%;}
+      #profile_popup_close { right: 50%; margin-right: -45px; top: -100px; opacity: 0.7;}
+      #profile_popup_close:hover { opacity: 1;}
+      
+    }
+    @media all and (min-width:768px) { /* 768~1023 태블릿 */
+        header { height: 65px;}
+        #logo { width: 52px;}
+        #lang { font-size: 14px; line-height: 65px;  }
+        .lang_sub {top: 57px;left: -30px;}
+       
+      footer { position: fixed; height: 62px;}
+      body {height: 100%;}
+      #footer_icon>li { width: 16px; height: 16px; margin: 3px; float: left; display: block;}
+      #footer_icon {float: left;}
+      #footer_selet_menu { position: relative;}
+      #footer_right { float: right; text-align: right;}
+      #footer_right>p { width: 70%; float: none;}
+      
+      #menu_icon2 { margin-left: 20px; width: 65px;}
+      #menu_popup_leftbg>ul { width: 370px;}
+      #about_bts { width: 100%;}
+      #about_bts>h2 { font-size: 4vw; width: 30%; text-align: right; margin-top: 10px;}
+      #about_bts>p {  width: 60%; margin-right: 5%;} 
+      #profile_img>li {width: 25%;}
+      .profile_mobile_hide { display: block;}
+      .profile_mobile_show { display: none;}
+      #profile_img>li>h3 {line-height: 25vw;font-size: 2.25vw;}
+      #profile_popup_box { width: 100%; padding-top: 0;}
+      #profile_popup_img {width: 50%; }
+      #profile_popup_textbox { width: 50%; text-align: left;}
+      #profile_popup_textbox>img {height: 100%;}
+      #profile_popup_textbox>h4{width: 100%;left: 20px; top: 0px; margin-top: 20%;}
+      #profile_popup_textbox>p { width: 100%;left: 20px; top: 20px; margin-top: 25%;}
+      #profile_popup_close { right: 0; margin-right: 0px; top: 0;}
+    }
+    @media all and (min-width:1024px) { /* pc */
+        header { height: 65px;}
+        #logo { width: 52px;}
+        #lang { font-size: 14px; line-height: 65px;  }
+        .lang_sub {top: 57px;left: -30px;}
+       
+      footer { position: fixed; height: 62px;}
+      body {height: 100%;}
+      #footer_icon>li {width: 22px; height: 22px; margin: 5px; float: left; display: block;}
+      #footer_selet_menu { position: absolute;}
+      #footer_icon {float: left;}
+      #footer_selet_menu { position: absolute;}
+      #footer_right { float: right; text-align: right;}
+      #footer_right>p { width: 70%; float: right;}
+      
+      #menu_icon2 { margin-left: 20px; width: 65px;}
+      #menu_popup_leftbg>ul { width: 370px;}
+      #about_bts { width: 1024px;}
+      #about_bts>h2 { font-size: 80px; width: 30%; text-align: right; margin-top: 10px;}
+      #about_bts>p {  width: 60%; margin-right: 5%;} 
+      #profile_img>li {width: 25%;}
+      .profile_mobile_hide { display: block;}
+      .profile_mobile_show { display: none;}
+      #profile_img>li>h3 {line-height: 25vw; font-size: 2.25vw;}
+      #profile_popup_box { width: 100%; padding-top: 0; }
+      #profile_popup_img {width: 50%; }
+      #profile_popup_textbox { width: 50%; text-align: left;}
+      #profile_popup_textbox>img {height: 100%;}
+      #profile_popup_textbox>h4{width: 100%;left: 20px; top: 0px; margin-top: 20%;}
+      #profile_popup_textbox>p { width: 100%;left: 20px; top: 20px; margin-top: 25%;}
+      #profile_popup_close { right: 0; margin-right: 0px; top: 0;}
+}
+    @media all and (min-width:1300px){
+        #profile_img>li>h3 {line-height: 325px; font-size: 30px;}
+        #profile_popup_box { width: 1300px;}
+        #profile_popup_img {width: 50%; }
+        #profile_popup_textbox { width: 50%;}
+        #profile_popup_textbox>img {height: 100%;}
+    }
+  </style>
+</head>
+<body>
+   <!-- profile -->
+   <div id="profile">
+        <div id="about_bts">
+            <img src="profile-kv.png" alt="" id="about_bts_img">
+            <h2>ABOUT BTS</h2>
+            <p>2013년 데뷔해 국내외 신인상을 휩쓴 방탄소년단은 명실상부 한국을 대표하는 최정상 보이 그룹으로 성장했다. 전 세계적으로 방탄소년단 열풍을 일으키며 ‘21세기 팝 아이콘’으로 불린다. <br>
+                미국 빌보드, 영국 오피셜 차트, 일본 오리콘을 비롯해 아이튠즈, 스포티파이, 애플뮤직 등 세계 유수의 차트 정상에 올랐고, 음반 판매량과 뮤직비디오 조회수, SNS 지수 등에서도 독보적인 기록을 써 내려가고 있다. 특히, 방탄소년단은 한 주에 빌보드 ‘핫 100’ 차트와 ‘빌보드 200’ 차트 정상을 동시 정복한 최초의 그룹이며, 통산 ‘빌보드 200’ 5차례, ‘핫 100’ 4차례 1위를 차지했다.<br>
+                또한, ‘제63회 그래미 어워드’에서 한국 가수 최초로 단독 무대를 펼쳐 ‘빌보드 뮤직 어워드’와 ‘아메리칸 뮤직 어워드’, ‘그래미 어워드’까지 미국 3대 음악 시상식 무대에서 공연하는 기록을 세웠다. 방탄소년단은 스타디움 투어를 개최하며 전 세계 콘서트 시장에서도 글로벌 아티스트로서의 입지를 다져 왔으며, UN 연설과 LOVE MYSELF 캠페인 등을 통해 선한 영향력을 실천하고 있다.</p>
+        </div>
+        <div id="profile_img_bg">
+        <ul id="profile_img">
+            <li><img src="transparent.png" alt=""><h3>MEMBER</h3></li>
+            <li class="profile_img" id="rm"><img src="member-rm.jpg" alt=""></li>
+            <li><img src="transparent.png" alt="" class="profile_mobile_hide"></li>
+            <li class="profile_img" id="jin"><img src="member-jin.jpg" alt=""></li>
+            <li><img src="transparent.png" alt="" class="profile_mobile_show"></li>
+            <li class="profile_img" id="suga"><img src="member-suga.jpg" alt=""></li>
+            <li><img src="transparent.png" alt=""class="profile_mobile_hide"></li>
+            <li class="profile_img" id="jhope"><img src="member-jhope.jpg" alt=""></li>
+            <li><img src="transparent.png" alt="" class="profile_mobile_show"></li>
+            <li class="profile_img" id="jimin"><img src="member-jimin.jpg" alt=""></li>
+            <li><img src="transparent.png" alt=""class="profile_mobile_hide"></li>
+            <li class="profile_img" id="v"><img src="member-v.jpg" alt=""></li>
+            <li class="profile_img" id="jk"><img src="member-jk.jpg" alt=""></li>
+            <li><img src="transparent.png" alt=""class="profile_mobile_hide"></li>
+        </ul>
+    </div>
+   </div>
+   <!-- profile 끝 -->
+   <div id="profile_popup">
+        <div id="profile_popup_box">
+            <img src="member-rm.jpg" alt="" id="profile_popup_img">
+            <div id="profile_popup_textbox">
+                <img src="transparent.png" alt="">
+                <h4>RM</h3>
+                <p>생일: 1994년 9월 12일</p>
+            </div>
+            <img src="popup-close-m.png" alt="" id="profile_popup_close">
+        </div>
+   </div>
+    <header>
+        <img src="btn-open-m.png" alt="" id="menu_icon1">
+        
+        <img src="logo-m.png" alt="" id="logo">
+        <h3 id="lang">KOR
+            <ul class="lang_sub">
+                <li>KOR</li>
+                <li>ENG</li>
+                <li>JPN</li>
+                <li>CHN</li>
+            </ul>
+        </h3>
+    </header>
+    <footer>
+        <ul id="footer_icon">
+            <li><img src="twitter.png" alt=""></li>
+            <li><img src="twitter-star.png" alt=""></li>
+            <li><img src="weibo.png" alt=""></li>
+            <li><img src="weibo-member.png" alt=""></li>
+            <li><img src="weverse.png" alt=""></li>
+            <li><img src="youku.png" alt=""></li>
+            <li><img src="youtube.png" alt=""></li>
+        </ul>
+        <div id="footer_selet_menu">
+            FAMILY SITES
+            <ul class="footer_selet_menu_sub">
+                <li>HYBE CO., LTD.</li>
+                <li>BIG HIT AUDITION</li>
+                <li>WEVERSE SHOP</li>
+                <li>WEVERSE</li>
+                <li>TOMORROW X TOGETHER OFFICIAL WEBSITE</li>
+                <li>LEE HYUN OFFICIAL WEBSITE</li>
+            </ul>
+        </div>
+        <div id="footer_right">
+            <h6>관련사이트</h6>
+            <p>COPYRIGHT © 2021 BIG HIT MUSIC / HYBE. ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+    <div id="menu_popup">
+        <div id="menu_popup_leftbg">
+            <ul>
+                <li>HOME</li>
+                <li>ABOUT</li>
+                <li>BTS</li>
+                <li>TOMORROW X TOGETHER</li>
+                <li>LEE HYUN</li>
+            </ul>
+        </div>
+        <div id="menu_popup_rightbg">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="sub.html">PROFILE</a></li>
+                <li><a href="discography.html">DISCOGRAPHY</a></li>
+                <li>SCHEDULE</li>
+                <li>TOUR</li>
+            </ul>
+        </div>
+        <img src="btn-close-m.png" alt="" id="menu_icon2">
+    </div>
+</body>
+</html>
